@@ -1,16 +1,21 @@
-//
-//  ContactsView.swift
-//  Rejsebuddy
-//
-//  Created by Andreas on 26/10/2019.
-//  Copyright © 2019 Prepager. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContactsView: View {
     var body: some View {
-        Text("Contacts")
+        NavigationView {
+            List(0..<30) { (item) in
+                ContactRow(contact: Contact(name: "Index \(item)"))
+            }
+            .navigationBarTitle("Contacts")
+            .navigationBarItems(trailing:
+                NavigationLink(destination: EditContact()) {
+                    HStack {
+                        Image("plus")
+                        Text("Add")
+                    }
+                }
+            )
+        }
     }
 }
 
