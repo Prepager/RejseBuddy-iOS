@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E14D30582364533E00FB79BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E14D305A2364533E00FB79BF /* Localizable.strings */; };
+		E14D305F23646EB100FB79BF /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D305E23646EB100FB79BF /* TripsView.swift */; };
+		E14D306123646EF300FB79BF /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D306023646EF300FB79BF /* ContactsView.swift */; };
+		E14D306323646F0000FB79BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D306223646F0000FB79BF /* SettingsView.swift */; };
 		E150905523644840009178AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905423644840009178AA /* AppDelegate.swift */; };
 		E150905723644840009178AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905623644840009178AA /* SceneDelegate.swift */; };
 		E150905923644840009178AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905823644840009178AA /* ContentView.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		E14D305B2364535900FB79BF /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E14D305E23646EB100FB79BF /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
+		E14D306023646EF300FB79BF /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		E14D306223646F0000FB79BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E150905123644840009178AA /* Rejsebuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rejsebuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E150905423644840009178AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E150905623644840009178AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 				E150905423644840009178AA /* AppDelegate.swift */,
 				E150905623644840009178AA /* SceneDelegate.swift */,
 				E150905823644840009178AA /* ContentView.swift */,
+				E14D305E23646EB100FB79BF /* TripsView.swift */,
+				E14D306023646EF300FB79BF /* ContactsView.swift */,
+				E14D306223646F0000FB79BF /* SettingsView.swift */,
 				E150905A23644842009178AA /* Assets.xcassets */,
 				E150905F23644842009178AA /* LaunchScreen.storyboard */,
 				E150906223644842009178AA /* Info.plist */,
@@ -154,6 +163,9 @@
 				E150905523644840009178AA /* AppDelegate.swift in Sources */,
 				E150905723644840009178AA /* SceneDelegate.swift in Sources */,
 				E150905923644840009178AA /* ContentView.swift in Sources */,
+				E14D306323646F0000FB79BF /* SettingsView.swift in Sources */,
+				E14D306123646EF300FB79BF /* ContactsView.swift in Sources */,
+				E14D305F23646EB100FB79BF /* TripsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
