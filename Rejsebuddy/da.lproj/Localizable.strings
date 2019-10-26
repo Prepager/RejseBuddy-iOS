@@ -1,7 +1,8 @@
-"First view" = "Første view";
-"Second view" = "Anden view";
-"Third view" = "Tredje view";
-
 "Trips" = "Rejser";
 "Contacts" = "Kontakter";
 "Settings" = "Indstillinger";
+
+"TO" = "TIL";
+"FROM" = "FRA";
+"Start Trip" = "Start Rejse";
+"Press to select location" = "Tryk for at vælge lokation";
