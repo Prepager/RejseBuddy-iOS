@@ -1,11 +1,3 @@
-//
-//  ContentView.swift
-//  Rejsebuddy
-//
-//  Created by Andreas on 26/10/2019.
-//  Copyright © 2019 Prepager. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,23 +6,34 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             Text("First view")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("First")
-                    }
-                }
                 .tag(0)
-            Text("Second view")
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image("trips")
+                        Text("Trips")
                     }
                 }
+            
+            Text("Second view")
                 .tag(1)
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("contacts")
+                        Text("Contacts")
+                    }
+                }
+                
+            Text("Third view")
+                .tag(2)
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("settings")
+                        Text("Settings")
+                    }
+                }
         }
     }
 }
