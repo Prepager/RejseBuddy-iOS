@@ -10,6 +10,6 @@ struct EditContact: View {
 
 struct EditContact_Previews: PreviewProvider {
     static var previews: some View {
-        EditContact(contact: Contact(name: "Example"))
+        EditContact(contact: Contact.example())
     }
 }

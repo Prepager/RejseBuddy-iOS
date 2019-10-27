@@ -1,10 +1,13 @@
 import SwiftUI
+import CoreData
 
 struct ContactsView: View {
+    let contacts: [Contact] = Contact.all()
+    
     var body: some View {
         NavigationView {
-            List(0..<30) { (item) in
-                ContactRow(contact: Contact(name: "Index \(item)"))
+            ForEach(contacts, id: \.self.objectID) { (contact) in
+                ContactRow(contact: contact)
             }
             .navigationBarTitle("Contacts")
             .navigationBarItems(trailing:

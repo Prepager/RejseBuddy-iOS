@@ -2,7 +2,18 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
+        Button(action: self.importExampleData) {
+            Text("TODO")
+        }
+    }
+    
+    func importExampleData() {
+        Contact.create(
+            name: "DTU Lyngby",
+            address: "Anker Engelunds Vej 1, 2800 Kgs. Lyngby",
+            latitude: Int(55.786489 * 1000000),
+            longitude: Int(12.5223509 * 1000000)
+        )
     }
 }
 
