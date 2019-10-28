@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct UserLocation: View {
-    @Binding var value: String
+    @Binding var address: String
+    @Binding var latitude: Int
+    @Binding var longitude: Int
 
     var body: some View {
         Button(action: getLocation) {
@@ -16,6 +18,10 @@ struct UserLocation: View {
 
 struct UserLocation_Previews: PreviewProvider {
     static var previews: some View {
-        UserLocation(value: .constant(""))
+        UserLocation(
+            address: .constant(""),
+            latitude: .constant(0),
+            longitude: .constant(0)
+        )
     }
 }

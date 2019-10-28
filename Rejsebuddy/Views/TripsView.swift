@@ -1,8 +1,13 @@
 import SwiftUI
 
 struct TripsView: View {
-    @State var from: String = ""
-    @State var to: String = ""
+    @State var fromAddress: String = ""
+    @State var fromLatitude: Int = 0
+    @State var fromLongitude: Int = 0
+    
+    @State var toAddress: String = ""
+    @State var toLatitude: Int = 0
+    @State var toLongitude: Int = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -11,15 +16,28 @@ struct TripsView: View {
                 VStack(alignment: .leading) {
                     InputLabel(text: "FROM")
                     HStack(spacing: 14) {
-                        AddressInput(value: $from)
-                        UserLocation(value: $from)
+                        AddressInput(
+                            address: $fromAddress,
+                            latitude: $fromLatitude,
+                            longitude: $fromLongitude
+                        )
+                        
+                        UserLocation(
+                            address: $fromAddress,
+                            latitude: $fromLatitude,
+                            longitude: $fromLongitude
+                        )
                     }
                 }
                 
                 // To
                 VStack(alignment: .leading) {
                     InputLabel(text: "TO")
-                    AddressInput(value: $to)
+                    AddressInput(
+                        address: $toAddress,
+                        latitude: $toLatitude,
+                        longitude: $toLongitude
+                    )
                 }
                 
                 // Start

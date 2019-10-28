@@ -2,7 +2,7 @@ import SwiftUI
 import CoreData
 
 struct ContactsView: View {
-    let contacts: [Contact] = Contact.all()
+    @State var contacts: [Contact] = Contact.all()
     
     var body: some View {
         NavigationView {

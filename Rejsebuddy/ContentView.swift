@@ -2,6 +2,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
+    
+    init() {
+        // Make navigation bar opaque white.
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        
+        // Set appearance as standard theme.
+        UINavigationBar.appearance().standardAppearance = appearance
+    }
  
     var body: some View {
         TabView(selection: $selection){

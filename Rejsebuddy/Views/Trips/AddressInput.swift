@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct AddressInput: View {
-    @Binding var value: String
+    @Binding var address: String
+    @Binding var latitude: Int
+    @Binding var longitude: Int
     
     var body: some View {
         VStack {
-            TextField("Press to select location", text: $value)
+            TextField("Press to select location", text: $address)
             Divider()
         }
     }
@@ -13,6 +15,10 @@ struct AddressInput: View {
 
 struct AddressInput_Previews: PreviewProvider {
     static var previews: some View {
-        AddressInput(value: .constant(""))
+        AddressInput(
+            address: .constant("DTU Lyngby"),
+            latitude: .constant(Int(55.786489 * 1000000)),
+            longitude: .constant(Int(12.5223509 * 1000000))
+        )
     }
 }

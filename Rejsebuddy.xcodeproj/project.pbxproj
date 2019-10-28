@@ -19,12 +19,14 @@
 		E14D30992365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E14D30972365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld */; };
 		E14D309C2365AF3200FB79BF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D309B2365AF3200FB79BF /* Contact.swift */; };
 		E14D309E2365AFF800FB79BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D309D2365AFF800FB79BF /* Model.swift */; };
+		E14D30A02365D35000FB79BF /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D309F2365D35000FB79BF /* Input.swift */; };
 		E150905523644840009178AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905423644840009178AA /* AppDelegate.swift */; };
 		E150905723644840009178AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905623644840009178AA /* SceneDelegate.swift */; };
 		E150905923644840009178AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150905823644840009178AA /* ContentView.swift */; };
 		E150905B23644842009178AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150905A23644842009178AA /* Assets.xcassets */; };
 		E150905E23644842009178AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150905D23644842009178AA /* Preview Assets.xcassets */; };
 		E150906123644842009178AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E150905F23644842009178AA /* LaunchScreen.storyboard */; };
+		E172A783236641DB005BD166 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A782236641DB005BD166 /* Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		E14D30982365AB2F00FB79BF /* Rejsebuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rejsebuddy.xcdatamodel; sourceTree = "<group>"; };
 		E14D309B2365AF3200FB79BF /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E14D309D2365AFF800FB79BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E14D309F2365D35000FB79BF /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		E150905123644840009178AA /* Rejsebuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rejsebuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E150905423644840009178AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E150905623644840009178AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		E150905D23644842009178AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E150906023644842009178AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E150906223644842009178AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E172A782236641DB005BD166 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				E14D306B2364818A00FB79BF /* InputLabel.swift */,
+				E14D309F2365D35000FB79BF /* Input.swift */,
+				E172A782236641DB005BD166 /* Keyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -224,10 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14D30A02365D35000FB79BF /* Input.swift in Sources */,
 				E14D309E2365AFF800FB79BF /* Model.swift in Sources */,
 				E150905523644840009178AA /* AppDelegate.swift in Sources */,
 				E150905723644840009178AA /* SceneDelegate.swift in Sources */,
 				E150905923644840009178AA /* ContentView.swift in Sources */,
+				E172A783236641DB005BD166 /* Keyboard.swift in Sources */,
 				E14D306323646F0000FB79BF /* SettingsView.swift in Sources */,
 				E14D30712364E46700FB79BF /* ContactRow.swift in Sources */,
 				E14D309C2365AF3200FB79BF /* Contact.swift in Sources */,
@@ -388,6 +396,7 @@
 				DEVELOPMENT_TEAM = 2DM29V72LY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Rejsebuddy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,6 +417,7 @@
 				DEVELOPMENT_TEAM = 2DM29V72LY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Rejsebuddy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
