@@ -14,3 +14,11 @@
 
 "NAME" = "NAVN";
 "ADDRESS" = "ADRESSE";
+
+"Data Imported" = "Data Importeret";
+"Import example data" = "Importer eksempel data";
+"Imports example contacts and recent trips" = "Importerer eksempel kontakter og nylige rejser";
+
+"Data Deleted" = "Data Slettet";
+"Delete application data" = "Slet applikations data";
+"This action is irreversible once completed" = "Denne handling er irreversibel når den er afsluttet";

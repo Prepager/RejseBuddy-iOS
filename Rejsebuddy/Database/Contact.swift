@@ -59,6 +59,15 @@ class Contact: Model {
     }
     
     /**
+     Truncates the contacts table.
+     */
+    static func truncate() {
+        for contact in Contact.all() {
+            contact.delete()
+        }
+    }
+    
+    /**
      Returns contact example instance.
      */
     static func example() -> Contact {

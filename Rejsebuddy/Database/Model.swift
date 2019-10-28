@@ -65,6 +65,18 @@ class Model: NSManagedObject {
     }
     
     /**
+     Attempts to execute the passed request on the default application context.
+     */
+    static func execute(request: NSPersistentStoreRequest) {
+        do {
+            try self.getContext().execute(request)
+        } catch {
+            print(error)
+            fatalError("Couldn't save model")
+        }
+    }
+    
+    /**
      Attempts to fetch and return the passed fetch request.
      */
     static func fetch(request: NSFetchRequest<NSFetchRequestResult>) -> [Any] {

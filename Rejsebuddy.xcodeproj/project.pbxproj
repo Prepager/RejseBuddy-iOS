@@ -27,6 +27,7 @@
 		E150905E23644842009178AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150905D23644842009178AA /* Preview Assets.xcassets */; };
 		E150906123644842009178AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E150905F23644842009178AA /* LaunchScreen.storyboard */; };
 		E172A783236641DB005BD166 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A782236641DB005BD166 /* Keyboard.swift */; };
+		E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A78523670CCB005BD166 /* ContactsSeeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		E150906023644842009178AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E150906223644842009178AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E172A782236641DB005BD166 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		E172A78523670CCB005BD166 /* ContactsSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsSeeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		E14D309A2365AF0600FB79BF /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				E172A78423670CBD005BD166 /* Seeders */,
 				E14D309B2365AF3200FB79BF /* Contact.swift */,
 				E14D309D2365AFF800FB79BF /* Model.swift */,
 			);
@@ -155,6 +158,14 @@
 				E150905D23644842009178AA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E172A78423670CBD005BD166 /* Seeders */ = {
+			isa = PBXGroup;
+			children = (
+				E172A78523670CCB005BD166 /* ContactsSeeder.swift */,
+			);
+			path = Seeders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				E14D306323646F0000FB79BF /* SettingsView.swift in Sources */,
 				E14D30712364E46700FB79BF /* ContactRow.swift in Sources */,
 				E14D309C2365AF3200FB79BF /* Contact.swift in Sources */,
+				E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */,
 				E14D306123646EF300FB79BF /* ContactsView.swift in Sources */,
 				E14D3068236480CC00FB79BF /* UserLocation.swift in Sources */,
 				E14D30992365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld in Sources */,

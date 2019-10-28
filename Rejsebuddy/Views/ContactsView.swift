@@ -2,7 +2,7 @@ import SwiftUI
 import CoreData
 
 struct ContactsView: View {
-    @State var contacts: [Contact] = Contact.all()
+    @State var contacts: [Contact] = []
     
     var body: some View {
         NavigationView {
@@ -20,7 +20,11 @@ struct ContactsView: View {
                     }
                 }
             )
-        }
+        }.onAppear(perform: fetch)
+    }
+    
+    func fetch() {
+        self.contacts = Contact.all()
     }
 }
 
