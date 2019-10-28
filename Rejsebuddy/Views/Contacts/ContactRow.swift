@@ -5,7 +5,20 @@ struct ContactRow: View {
     
     var body: some View {
         NavigationLink(destination: EditContact(contact: contact)) {
-            Text(contact.name)
+            HStack(spacing: 16) {
+                Image(systemName: "person.crop.circle.fill")
+                    .font(.system(size: 36))
+                    .foregroundColor(Color.blue)
+                
+                VStack(alignment: .leading) {
+                    Text(contact.name)
+                        .bold()
+                    
+                    Text(contact.address)
+                        .font(.caption)
+                        .foregroundColor(Color.gray)
+                }
+            }.padding(.vertical, 8)
         }
     }
 }

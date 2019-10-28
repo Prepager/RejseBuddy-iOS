@@ -6,8 +6,10 @@ struct ContactsView: View {
     
     var body: some View {
         NavigationView {
-            ForEach(contacts, id: \.self.objectID) { (contact) in
-                ContactRow(contact: contact)
+            List {
+                ForEach(contacts, id: \.self.objectID) { (contact) in
+                    ContactRow(contact: contact)
+                }
             }
             .navigationBarTitle("Contacts")
             .navigationBarItems(trailing:
