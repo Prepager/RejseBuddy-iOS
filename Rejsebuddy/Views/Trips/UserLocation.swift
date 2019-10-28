@@ -7,12 +7,13 @@ struct UserLocation: View {
 
     var body: some View {
         Button(action: getLocation) {
-            Image("location")
+            Image(systemName: "location.fill")
+                .font(.system(size: 20))
         }
     }
     
     func getLocation() {
-        print("Get location")
+        print("TODO: Get location")
     }
 }
 

@@ -13,7 +13,7 @@ struct ContactsView: View {
             .navigationBarItems(trailing:
                 NavigationLink(destination: EditContact()) {
                     HStack {
-                        Image("plus")
+                        Image(systemName: "plus")
                         Text("Add")
                     }
                 }

@@ -39,7 +39,8 @@ struct EditContact: View {
                     // Delete
                     if contact != nil {
                         Button(action: deleteContact) {
-                            Image("delete")
+                            Image(systemName: "trash")
+                                .font(.system(size: 25))
                                 .foregroundColor(Color.red)
                         }
                         .padding(10)

@@ -17,21 +17,27 @@ struct ContentView: View {
         TabView(selection: $selection){
             TripsView().tag(0).tabItem {
                 VStack {
-                    Image("trips")
+                    Image(systemName: "paperplane.fill")
+                        .font(.system(size: 25))
+                    
                     Text("Trips")
                 }
             }
             
             ContactsView().tag(1).tabItem {
                 VStack {
-                    Image("contacts")
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 25))
+                    
                     Text("Contacts")
                 }
             }
                 
             SettingsView().tag(2).tabItem {
                 VStack {
-                    Image("settings")
+                    Image(systemName: "gear")
+                        .font(.system(size: 25))
+                    
                     Text("Settings")
                 }
             }
