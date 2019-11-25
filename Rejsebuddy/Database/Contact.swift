@@ -7,8 +7,8 @@ class Contact: Model {
     
     @NSManaged var name: String
     @NSManaged var address: String
-    @NSManaged var latitude: Int
-    @NSManaged var longitude: Int
+    @NSManaged var latitude: Double
+    @NSManaged var longitude: Double
     
     /**
      Returns all the contacts from database.
@@ -22,7 +22,7 @@ class Contact: Model {
     /**
      Creates new contact with passed data.
      */
-    @discardableResult static func create(name: String, address: String, latitude: Int, longitude: Int) -> Contact {
+    @discardableResult static func create(name: String, address: String, latitude: Double, longitude: Double) -> Contact {
         // Create contact and fill with passed data.
         let contact = Contact.instance(entity: self.entity) as! Contact
         contact.setValue(name, forKey: "name")
@@ -38,7 +38,7 @@ class Contact: Model {
     /**
      Updates passed contact instance with passed data.
      */
-    @discardableResult func update(name: String, address: String, latitude: Int, longitude: Int) -> Contact {
+    @discardableResult func update(name: String, address: String, latitude: Double, longitude: Double) -> Contact {
         // Update values on passed instance.
         self.setValue(name, forKey: "name")
         self.setValue(address, forKey: "address")
@@ -48,6 +48,17 @@ class Contact: Model {
         // Save instance and return updated.
         Contact.save()
         return self
+    }
+    
+    /**
+     Returns an address object instance.
+     */
+    func getAddress() -> Address {
+        return Address(
+            name: self.address,
+            latitude: self.latitude,
+            longitude: self.longitude
+        )
     }
     
     /**
@@ -75,8 +86,8 @@ class Contact: Model {
         let contact = Contact.instance(entity: self.entity, context: nil) as! Contact
         contact.setValue("DTU Lyngby", forKey: "name")
         contact.setValue("Anker Engelunds Vej 1, 2800 Kgs. Lyngby", forKey: "address")
-        contact.setValue(Int(55.786489 * 1000000), forKey: "latitude")
-        contact.setValue(Int(12.5223509 * 1000000), forKey: "longitude")
+        contact.setValue(55.786489, forKey: "latitude")
+        contact.setValue(12.5223509, forKey: "longitude")
         
         // Return the example instance.
         return contact

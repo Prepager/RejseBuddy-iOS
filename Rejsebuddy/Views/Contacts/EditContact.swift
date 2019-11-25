@@ -8,9 +8,7 @@ struct EditContact: View {
     var contact: Contact?
     
     @State var name: String = ""
-    @State var address: String = ""
-    @State var latitude: Int = 0
-    @State var longitude: Int = 0
+    @ObservedObject var address: Address = Address()
 
     var body: some View {
         HStack {
@@ -24,11 +22,7 @@ struct EditContact: View {
                 // Address
                 VStack(alignment: .leading) {
                     InputLabel(text: "ADDRESS")
-                    AddressInput(
-                        address: $address,
-                        latitude: $latitude,
-                        longitude: $longitude
-                    )
+                    AddressInput(address: address).padding(.top, 8)
                 }
                 
                 // Spacer
@@ -88,9 +82,7 @@ struct EditContact: View {
         
         // Set contact values on instance.
         self.name = self.contact!.name
-        self.address = self.contact!.address
-        self.latitude = self.contact!.latitude
-        self.longitude = self.contact!.longitude
+        self.address.set(address: self.contact!.getAddress())
     }
     
     /**
@@ -102,17 +94,17 @@ struct EditContact: View {
             // Update current contact.
             self.contact?.update(
                 name: self.name,
-                address: self.address,
-                latitude: self.latitude,
-                longitude: self.longitude
+                address: self.address.name,
+                latitude: self.address.latitude,
+                longitude: self.address.longitude
             )
         } else {
             // Create new contact.
             Contact.create(
                 name: self.name,
-                address: self.address,
-                latitude: self.latitude,
-                longitude: self.longitude
+                address: self.address.name,
+                latitude: self.address.latitude,
+                longitude: self.address.longitude
             )
         }
         

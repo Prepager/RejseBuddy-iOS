@@ -1,13 +1,8 @@
 import SwiftUI
 
 struct TripsView: View {
-    @State var fromAddress: String = ""
-    @State var fromLatitude: Int = 0
-    @State var fromLongitude: Int = 0
-    
-    @State var toAddress: String = ""
-    @State var toLatitude: Int = 0
-    @State var toLongitude: Int = 0
+    @ObservedObject var from: Address = Address()
+    @ObservedObject var to: Address = Address()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -16,28 +11,15 @@ struct TripsView: View {
                 VStack(alignment: .leading) {
                     InputLabel(text: "FROM")
                     HStack(spacing: 14) {
-                        AddressInput(
-                            address: $fromAddress,
-                            latitude: $fromLatitude,
-                            longitude: $fromLongitude
-                        )
-                        
-                        UserLocation(
-                            address: $fromAddress,
-                            latitude: $fromLatitude,
-                            longitude: $fromLongitude
-                        )
+                        AddressInput(address: from)
+                        UserLocation(address: from)
                     }
                 }
                 
                 // To
                 VStack(alignment: .leading) {
                     InputLabel(text: "TO")
-                    AddressInput(
-                        address: $toAddress,
-                        latitude: $toLatitude,
-                        longitude: $toLongitude
-                    )
+                    AddressInput(address: to).padding(.top, 8)
                 }
                 
                 // Start
@@ -59,24 +41,6 @@ struct TripsView: View {
                     .padding(10)
                     .layoutPriority(1)
                 }
-                
-                
-                /*VStack {
-                    RoundedRectangle(cornerRadius: 10) {
-                        Button(action: startTrip) {
-                            
-                        }
-                    }
-                    
-                        HStack {
-                            Spacer()
-                            Text("Start Trip")
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        .padding(10)
-                    }
-                }*/
             }
             .zIndex(1)
             .padding(16)
