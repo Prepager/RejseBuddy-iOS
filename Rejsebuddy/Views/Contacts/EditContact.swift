@@ -72,6 +72,11 @@ struct EditContact: View {
 
             displayMode: .inline
         )
+        .navigationBarItems(trailing: (
+            Button(action: { self.saveContact() }) {
+                Text("Save")
+            }
+        ))
     }
     
     /**
