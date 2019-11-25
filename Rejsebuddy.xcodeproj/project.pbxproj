@@ -30,6 +30,8 @@
 		E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A78523670CCB005BD166 /* ContactsSeeder.swift */; };
 		E172A78823671FE7005BD166 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A78723671FE7005BD166 /* LocationManager.swift */; };
 		E172A78D23688F2C005BD166 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A78C23688F2C005BD166 /* Address.swift */; };
+		E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E2238C7D86003E3654 /* SelectAddress.swift */; };
+		E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E4238C8171003E3654 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		E172A78723671FE7005BD166 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E172A78A23672980005BD166 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E172A78C23688F2C005BD166 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		E1C272E2238C7D86003E3654 /* SelectAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddress.swift; sourceTree = "<group>"; };
+		E1C272E4238C8171003E3654 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			children = (
 				E14D306523647D6000FB79BF /* AddressInput.swift */,
 				E14D3067236480CC00FB79BF /* UserLocation.swift */,
+				E1C272E2238C7D86003E3654 /* SelectAddress.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 				E14D309F2365D35000FB79BF /* Input.swift */,
 				E172A782236641DB005BD166 /* Keyboard.swift */,
 				E172A78723671FE7005BD166 /* LocationManager.swift */,
+				E1C272E4238C8171003E3654 /* SearchBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -269,7 +275,9 @@
 				E172A78823671FE7005BD166 /* LocationManager.swift in Sources */,
 				E14D309C2365AF3200FB79BF /* Contact.swift in Sources */,
 				E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */,
+				E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */,
 				E14D306123646EF300FB79BF /* ContactsView.swift in Sources */,
+				E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */,
 				E14D3068236480CC00FB79BF /* UserLocation.swift in Sources */,
 				E14D30992365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld in Sources */,
 				E14D306F2364E2FA00FB79BF /* EditContact.swift in Sources */,

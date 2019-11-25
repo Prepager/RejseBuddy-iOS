@@ -1,24 +1,26 @@
 import SwiftUI
 
 struct AddressInput: View {
-    @State var todo: String = ""
+    @State var show = false
     @ObservedObject var address: Address
     
     var body: some View {
         VStack {
-            Button(action: { /* @wip */ }) {
+            Button(action: { self.show.toggle() }) {
                 if address.name == "" {
                     Text("Press to select location")
                         .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.25))
                 } else {
                     Text(self.address.name)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                 }
                 
                 Spacer()
             }
             
             Divider()
+        }.sheet(isPresented: $show) {
+            SelectAddress(show: self.$show, address: self.address)
         }
     }
 }
