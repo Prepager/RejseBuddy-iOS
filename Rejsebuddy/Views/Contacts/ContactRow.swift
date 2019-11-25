@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContactRow: View {
-    let contact: Contact
+    @ObservedObject var contact: Contact
     
     var body: some View {
         NavigationLink(destination: EditContact(contact: contact)) {

@@ -88,4 +88,13 @@ class Model: NSManagedObject {
         }
     }
     
+    /**
+     Fix manged object not sending observed object changes.
+     @see https://twitter.com/konstantinbe/status/1166423609348427778
+     */
+    override public func willChangeValue(forKey key: String) {
+        super.willChangeValue(forKey: key);
+        self.objectWillChange.send();
+    }
+    
 }

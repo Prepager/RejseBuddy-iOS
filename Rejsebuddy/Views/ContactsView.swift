@@ -2,14 +2,17 @@ import SwiftUI
 import CoreData
 
 struct ContactsView: View {
-    @State var contacts: [Contact] = []
+    @FetchRequest(
+        entity: Contact.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+    ) var contacts: FetchedResults<Contact>
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(contacts, id: \.self.objectID) { (contact) in
-                    ContactRow(contact: contact)
-                }
+            List(contacts, id: \.self) { contact in
+                ContactRow(contact: contact)
             }
             .navigationBarTitle("Contacts")
             .navigationBarItems(trailing:
@@ -20,11 +23,7 @@ struct ContactsView: View {
                     }
                 }
             )
-        }.onAppear(perform: fetch)
-    }
-    
-    func fetch() {
-        self.contacts = Contact.all()
+        }
     }
 }
 
