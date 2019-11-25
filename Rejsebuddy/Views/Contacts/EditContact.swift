@@ -66,7 +66,10 @@ struct EditContact: View {
         .padding(.bottom, self.keyboard.height)
         .onAppear(perform: self.bind)
         .navigationBarTitle(
-            Text(self.contact?.name ?? "Create Contact"),
+            self.contact != nil
+                ? Text(self.contact!.name)
+                : Text("Create Contact"),
+
             displayMode: .inline
         )
     }
