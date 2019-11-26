@@ -32,6 +32,11 @@
 		E172A78D23688F2C005BD166 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172A78C23688F2C005BD166 /* Address.swift */; };
 		E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E2238C7D86003E3654 /* SelectAddress.swift */; };
 		E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E4238C8171003E3654 /* SearchBar.swift */; };
+		E1C272E8238C8A52003E3654 /* SearchLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E7238C8A52003E3654 /* SearchLocations.swift */; };
+		E1C272EC238C8AB7003E3654 /* RPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272EB238C8AB7003E3654 /* RPLocation.swift */; };
+		E1C272EE238C8B56003E3654 /* Consumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272ED238C8B56003E3654 /* Consumer.swift */; };
+		E1C272F0238CA1B9003E3654 /* RPLocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272EF238CA1B9003E3654 /* RPLocationList.swift */; };
+		E1C272F4238CA32A003E3654 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272F3238CA32A003E3654 /* LocationRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		E172A78C23688F2C005BD166 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		E1C272E2238C7D86003E3654 /* SelectAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddress.swift; sourceTree = "<group>"; };
 		E1C272E4238C8171003E3654 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E1C272E7238C8A52003E3654 /* SearchLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocations.swift; sourceTree = "<group>"; };
+		E1C272EB238C8AB7003E3654 /* RPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLocation.swift; sourceTree = "<group>"; };
+		E1C272ED238C8B56003E3654 /* Consumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumer.swift; sourceTree = "<group>"; };
+		E1C272EF238CA1B9003E3654 /* RPLocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLocationList.swift; sourceTree = "<group>"; };
+		E1C272F3238CA32A003E3654 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,21 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E14D306423647D4F00FB79BF /* Trips */ = {
+		E14D306423647D4F00FB79BF /* Address */ = {
 			isa = PBXGroup;
 			children = (
+				E1C272F1238CA311003E3654 /* Search */,
 				E14D306523647D6000FB79BF /* AddressInput.swift */,
 				E14D3067236480CC00FB79BF /* UserLocation.swift */,
-				E1C272E2238C7D86003E3654 /* SelectAddress.swift */,
 			);
-			path = Trips;
+			path = Address;
 			sourceTree = "<group>";
 		};
 		E14D30692364816500FB79BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E14D306A2364817B00FB79BF /* Utils */,
-				E14D306423647D4F00FB79BF /* Trips */,
+				E14D306423647D4F00FB79BF /* Address */,
 				E14D306D2364E2E000FB79BF /* Contacts */,
 				E14D305E23646EB100FB79BF /* TripsView.swift */,
 				E14D306023646EF300FB79BF /* ContactsView.swift */,
@@ -151,6 +161,7 @@
 		E150905323644840009178AA /* Rejsebuddy */ = {
 			isa = PBXGroup;
 			children = (
+				E1C272E6238C8A2F003E3654 /* API */,
 				E14D309A2365AF0600FB79BF /* Database */,
 				E14D30692364816500FB79BF /* Views */,
 				E14D305A2364533E00FB79BF /* Localizable.strings */,
@@ -188,6 +199,42 @@
 				E172A78A23672980005BD166 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1C272E6238C8A2F003E3654 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E1C272EA238C8A97003E3654 /* Models */,
+				E1C272E9238C8A8C003E3654 /* Tasks */,
+				E1C272ED238C8B56003E3654 /* Consumer.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E1C272E9238C8A8C003E3654 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				E1C272E7238C8A52003E3654 /* SearchLocations.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		E1C272EA238C8A97003E3654 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1C272EB238C8AB7003E3654 /* RPLocation.swift */,
+				E1C272EF238CA1B9003E3654 /* RPLocationList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E1C272F1238CA311003E3654 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E1C272E2238C7D86003E3654 /* SelectAddress.swift */,
+				E1C272F3238CA32A003E3654 /* LocationRow.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14D30A02365D35000FB79BF /* Input.swift in Sources */,
+				E1C272EC238C8AB7003E3654 /* RPLocation.swift in Sources */,
 				E14D309E2365AFF800FB79BF /* Model.swift in Sources */,
 				E150905523644840009178AA /* AppDelegate.swift in Sources */,
 				E150905723644840009178AA /* SceneDelegate.swift in Sources */,
@@ -272,16 +320,20 @@
 				E172A783236641DB005BD166 /* Keyboard.swift in Sources */,
 				E14D306323646F0000FB79BF /* SettingsView.swift in Sources */,
 				E14D30712364E46700FB79BF /* ContactRow.swift in Sources */,
+				E1C272F0238CA1B9003E3654 /* RPLocationList.swift in Sources */,
 				E172A78823671FE7005BD166 /* LocationManager.swift in Sources */,
 				E14D309C2365AF3200FB79BF /* Contact.swift in Sources */,
 				E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */,
 				E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */,
 				E14D306123646EF300FB79BF /* ContactsView.swift in Sources */,
+				E1C272E8238C8A52003E3654 /* SearchLocations.swift in Sources */,
 				E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */,
 				E14D3068236480CC00FB79BF /* UserLocation.swift in Sources */,
+				E1C272F4238CA32A003E3654 /* LocationRow.swift in Sources */,
 				E14D30992365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld in Sources */,
 				E14D306F2364E2FA00FB79BF /* EditContact.swift in Sources */,
 				E14D305F23646EB100FB79BF /* TripsView.swift in Sources */,
+				E1C272EE238C8B56003E3654 /* Consumer.swift in Sources */,
 				E14D306C2364818A00FB79BF /* InputLabel.swift in Sources */,
 				E14D306623647D6000FB79BF /* AddressInput.swift in Sources */,
 			);
