@@ -21,4 +21,7 @@ class Address: ObservableObject {
         self.longitude = address.longitude
     }
     
+    func valid() -> Bool {
+        return self.latitude != 0 && self.longitude != 0
+    }
 }

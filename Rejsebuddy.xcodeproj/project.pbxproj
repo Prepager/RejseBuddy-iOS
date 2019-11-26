@@ -37,6 +37,7 @@
 		E1C272EE238C8B56003E3654 /* Consumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272ED238C8B56003E3654 /* Consumer.swift */; };
 		E1C272F0238CA1B9003E3654 /* RPLocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272EF238CA1B9003E3654 /* RPLocationList.swift */; };
 		E1C272F6238D7EFE003E3654 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272F5238D7EFE003E3654 /* LocationRow.swift */; };
+		E1FCB217238DA64500AC6F88 /* ConnectionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FCB216238DA64500AC6F88 /* ConnectionsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		E1C272ED238C8B56003E3654 /* Consumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumer.swift; sourceTree = "<group>"; };
 		E1C272EF238CA1B9003E3654 /* RPLocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLocationList.swift; sourceTree = "<group>"; };
 		E1C272F5238D7EFE003E3654 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
+		E1FCB216238DA64500AC6F88 /* ConnectionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		E14D30692364816500FB79BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1FCB215238DA63400AC6F88 /* Connections */,
 				E14D306A2364817B00FB79BF /* Utils */,
 				E14D306423647D4F00FB79BF /* Address */,
 				E14D306D2364E2E000FB79BF /* Contacts */,
@@ -237,6 +240,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		E1FCB215238DA63400AC6F88 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				E1FCB216238DA64500AC6F88 /* ConnectionsList.swift */,
+			);
+			path = Connections;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,6 +326,7 @@
 				E14D309E2365AFF800FB79BF /* Model.swift in Sources */,
 				E150905523644840009178AA /* AppDelegate.swift in Sources */,
 				E150905723644840009178AA /* SceneDelegate.swift in Sources */,
+				E1FCB217238DA64500AC6F88 /* ConnectionsList.swift in Sources */,
 				E150905923644840009178AA /* ContentView.swift in Sources */,
 				E172A78D23688F2C005BD166 /* Address.swift in Sources */,
 				E172A783236641DB005BD166 /* Keyboard.swift in Sources */,
