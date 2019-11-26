@@ -46,7 +46,7 @@ struct SelectAddress: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack {
                 SearchBar(text: $viewModel.searchText)
                 Button(action: { self.show.toggle() }) {
