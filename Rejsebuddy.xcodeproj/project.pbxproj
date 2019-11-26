@@ -36,7 +36,7 @@
 		E1C272EC238C8AB7003E3654 /* RPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272EB238C8AB7003E3654 /* RPLocation.swift */; };
 		E1C272EE238C8B56003E3654 /* Consumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272ED238C8B56003E3654 /* Consumer.swift */; };
 		E1C272F0238CA1B9003E3654 /* RPLocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272EF238CA1B9003E3654 /* RPLocationList.swift */; };
-		E1C272F4238CA32A003E3654 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272F3238CA32A003E3654 /* LocationRow.swift */; };
+		E1C272F6238D7EFE003E3654 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272F5238D7EFE003E3654 /* LocationRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +72,7 @@
 		E1C272EB238C8AB7003E3654 /* RPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLocation.swift; sourceTree = "<group>"; };
 		E1C272ED238C8B56003E3654 /* Consumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumer.swift; sourceTree = "<group>"; };
 		E1C272EF238CA1B9003E3654 /* RPLocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLocationList.swift; sourceTree = "<group>"; };
-		E1C272F3238CA32A003E3654 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
+		E1C272F5238D7EFE003E3654 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E1C272E2238C7D86003E3654 /* SelectAddress.swift */,
-				E1C272F3238CA32A003E3654 /* LocationRow.swift */,
+				E1C272F5238D7EFE003E3654 /* LocationRow.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 				E1C272E8238C8A52003E3654 /* SearchLocations.swift in Sources */,
 				E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */,
 				E14D3068236480CC00FB79BF /* UserLocation.swift in Sources */,
-				E1C272F4238CA32A003E3654 /* LocationRow.swift in Sources */,
+				E1C272F6238D7EFE003E3654 /* LocationRow.swift in Sources */,
 				E14D30992365AB2F00FB79BF /* Rejsebuddy.xcdatamodeld in Sources */,
 				E14D306F2364E2FA00FB79BF /* EditContact.swift in Sources */,
 				E14D305F23646EB100FB79BF /* TripsView.swift in Sources */,

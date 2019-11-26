@@ -23,6 +23,12 @@ struct UserLocation: View, LocationChangedDelegate {
         self.address.name = NSLocalizedString("Your current location", comment: "")
         self.address.latitude = location.coordinate.latitude
         self.address.longitude = location.coordinate.longitude
+        
+        self.manager.lookupLocation(location: location) { placemarker in
+            if placemarker != nil && placemarker?.name != nil {
+                self.address.name = placemarker!.name!
+            }
+        }
     }
 }
 

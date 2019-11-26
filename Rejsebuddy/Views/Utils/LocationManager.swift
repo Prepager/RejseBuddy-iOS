@@ -12,7 +12,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     var wasRequested = false
     
     var delegate: LocationChangedDelegate?
-    var manager: CLLocationManager = CLLocationManager()
+    
+    var geocoder = CLGeocoder()
+    var manager = CLLocationManager()
     
     override init() {
         super.init()
@@ -49,6 +51,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
      */
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Swift.Error) {
         dump(error)
+    }
+    
+    /**
+     Lookup address for the passed location coordinates.
+     */
+    func lookupLocation(location: CLLocation, completion: @escaping (CLPlacemark?) -> Void) {
+        self.geocoder.reverseGeocodeLocation(location) { (placemarkers, error) in
+            completion(placemarkers?[0])
+        }
     }
     
 }
