@@ -11,6 +11,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     var wasRequested = false
     
+    @Published var address: Address?
+    @Published var location: CLLocation?
+    @Published var authorization: CLAuthorizationStatus?
+    
     var delegate: LocationChangedDelegate?
     
     var geocoder = CLGeocoder()
@@ -19,6 +23,26 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         self.manager.delegate = self
+    }
+    
+    deinit {
+        self.stop()
+    }
+    
+    /**
+     Start updating location.
+     */
+    func start() {
+        self.wasRequested = true
+        self.manager.requestWhenInUseAuthorization()
+        self.manager.startUpdatingLocation()
+    }
+    
+    /**
+     Stop updating location.
+     */
+    func stop() {
+        self.manager.stopUpdatingLocation()
     }
     
     /**
@@ -31,9 +55,28 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     /**
+     Parse found location into address.
+     */
+    func parseLocation() {
+        self.address = Address()
+        self.address!.name = NSLocalizedString("Your current location", comment: "")
+        self.address!.latitude = self.location!.coordinate.latitude
+        self.address!.longitude = self.location!.coordinate.longitude
+        
+        self.lookupLocation(location: self.location!) { placemarker in
+            if placemarker != nil && placemarker?.name != nil {
+                self.address!.name = placemarker!.name!
+            }
+        }
+    }
+    
+    /**
      Listen for location manager location updates.
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.location = locations.last!
+        self.parseLocation()
+        
         self.delegate?.locationWasChanged(location: locations.last!)
     }
     
@@ -41,6 +84,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
      Listen for location manager authorization changes.
      */
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.authorization = status
+        
         if self.wasRequested {
             self.request()
         }
