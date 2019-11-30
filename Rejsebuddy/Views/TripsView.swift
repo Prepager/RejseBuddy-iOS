@@ -4,10 +4,6 @@ struct TripsView: View {
     @ObservedObject var from: Address = Address()
     @ObservedObject var to: Address = Address()
     
-    // Hidden state cannot be changed from child views.
-    // @see https://stackoverflow.com/a/57518324
-    @State var isNavbarHidden: Bool = true
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -32,7 +28,10 @@ struct TripsView: View {
                                 : Color.blue
                             )
                         
-                        NavigationLink(destination: ConnectionsList(isNavbarHidden: $isNavbarHidden)) {
+                        NavigationLink(destination: TripsList(
+                            origin: self.from,
+                            destination: self.to
+                        )) {
                             HStack {
                                 Spacer()
                                 
@@ -53,17 +52,16 @@ struct TripsView: View {
                 .background(Color.white)
                 .clipped()
                 .shadow(
-                    color: Color(white: 0, opacity: 0.1),
-                    radius: 6, y: 4
+                    color: Color(white: 0, opacity: 0.05),
+                    radius: 4, y: 3
                 )
                 
                 Rectangle().fill(Color.white)
             }
-            .navigationBarHidden(isNavbarHidden)
-            .navigationBarTitle(Text("Trips"))
-            .onAppear {
-                self.isNavbarHidden = true
-            }
+            .navigationBarTitle(
+                Text("Trips"),
+                displayMode: .inline
+            )
         }
     }
 }

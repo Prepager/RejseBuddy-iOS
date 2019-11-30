@@ -1,3 +1,4 @@
+"Trip" = "Rejse";
 "Trips" = "Rejser";
 "Contacts" = "Kontakter";
 "Settings" = "Indstillinger";
@@ -6,6 +7,9 @@
 "TO" = "TIL";
 "FROM" = "FRA";
 "Start Trip" = "Start Rejse";
+
+"Stops" = "Stop";
+"Changes" = "Skift";
 
 "Your current location" = "Din nuværende lokation";
 "Press to select location" = "Tryk for at vælge lokation";

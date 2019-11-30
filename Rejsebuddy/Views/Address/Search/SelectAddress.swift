@@ -3,7 +3,7 @@ import Combine
 
 class LocationSearchViewModel: ObservableObject {
     @Published var searchText: String = ""
-    @ObservedObject var consumer: SearchLocations = SearchLocations()
+    @ObservedObject var consumer = SearchLocations()
     
     private var cancellable: AnyCancellable? = nil
     private var nestedCancellable: AnyCancellable? = nil
