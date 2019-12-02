@@ -11,6 +11,24 @@ struct LocationRow: View {
             
             Text(self.location.name)
                 .font(.system(size: 14))
+            
+            Spacer()
+            
+            if self.location.distance != nil {
+                if self.location.distance! < 1000 {
+                    Text(String(Int(self.location.distance!)) + " m")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                } else if self.location.distance! < 10000 {
+                    Text(String(format: "%.2f", self.location.distance! / 1000) + " km")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                } else {
+                   Text(String(Int(self.location.distance! / 1000)) + " km")
+                       .font(.caption)
+                       .foregroundColor(.gray)
+               }
+            }
         }
     }
 }

@@ -3,19 +3,16 @@ import Combine
 
 class LocationSearchViewModel: ObservableObject {
     @Published var searchText: String = ""
+    @ObservedObject var manager = LocationManager()
     @ObservedObject var consumer = SearchLocations()
     
+    @Published var locations = [RPLocation]()
+    
     private var cancellable: AnyCancellable? = nil
-    private var nestedCancellable: AnyCancellable? = nil
     
     init() {
-        // Handle nested obserable objects.
-        self.nestedCancellable = AnyCancellable(
-            self.consumer.objectWillChange
-                .sink { _ in
-                    self.objectWillChange.send()
-                }
-        )
+        // Start location watcher.
+        self.manager.start()
         
         // Fetch on search text changed.
         self.cancellable = AnyCancellable(
@@ -23,14 +20,35 @@ class LocationSearchViewModel: ObservableObject {
                 .removeDuplicates()
                 .debounce(for: 0.25, scheduler: DispatchQueue.main)
                 .sink { query in
-                    self.consumer.fetch(search: query)
+                    self.fetch(search: query)
                 }
         )
     }
     
     deinit {
         self.cancellable?.cancel()
-        self.nestedCancellable?.cancel()
+    }
+    
+    func fetch(search: String) {
+        self.consumer
+            .fetch(search: search)
+            .sink(receiveCompletion: { c in
+                if case let .failure(error) = c {
+                    dump(error)
+                }
+            }, receiveValue: { list in
+                // Find distances for locations and sort.
+                self.locations = list.locations.map({ instance -> RPLocation in
+                    var location = instance
+                    location.distance = self.manager.distanceTo(
+                        address: location.getAddress()
+                    )
+                    
+                    return location
+                }).sorted(by: { (a, b) -> Bool in
+                    return a.distance! < b.distance!
+                })
+            })
     }
 }
 
@@ -54,7 +72,7 @@ struct SelectAddress: View {
                 }.padding(.trailing, 15)
             }
             
-            List(viewModel.consumer.locations, id: \.self) { location in
+            List(viewModel.locations, id: \.self) { location in
                 Button(action: {
                     self.address.set(address: location.getAddress())
                     self.show.toggle()

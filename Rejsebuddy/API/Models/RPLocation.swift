@@ -7,6 +7,9 @@ struct RPLocation: Decodable, Hashable {
     public var x: String
     public var y: String
     
+    // Non-response variables
+    public var distance: Double?
+    
     enum LocationTypes: String, Decodable {
         case STP // Stop
         case ADR // Address

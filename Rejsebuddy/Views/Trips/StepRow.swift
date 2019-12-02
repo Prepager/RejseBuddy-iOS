@@ -5,7 +5,7 @@ struct StepRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top) {
+            HStack {
                 VStack {
                     Text(step.origin.time)
                         .bold()
@@ -21,7 +21,7 @@ struct StepRow: View {
                 Text(step.origin.name)
             }
             
-            HStack(alignment: .center) {
+            HStack {
                 if step.type != "WALK" {
                     Text("").frame(width: 70)
                     
@@ -64,7 +64,7 @@ struct StepRow: View {
                 }
             }
             
-            HStack(alignment: .bottom) {
+            HStack {
                 VStack {
                     Text(step.destination.time)
                         .bold()

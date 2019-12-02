@@ -4,7 +4,7 @@ import Foundation
 import CoreLocation
 
 protocol LocationChangedDelegate {
-    func locationWasChanged(location: CLLocation)
+    func locationWasChanged(address: Address)
 }
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -57,7 +57,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     /**
      Parse found location into address.
      */
-    func parseLocation() {
+    func parseLocation(completion: @escaping (Address) -> Void) {
         self.address = Address()
         self.address!.name = NSLocalizedString("Your current location", comment: "")
         self.address!.latitude = self.location!.coordinate.latitude
@@ -67,7 +67,23 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             if placemarker != nil && placemarker?.name != nil {
                 self.address!.name = placemarker!.name!
             }
+            
+            completion(self.address!)
         }
+    }
+    
+    /**
+     Calculate distance between current and passed location.
+     */
+    func distanceTo(address: Address) -> Double {
+        if self.location == nil {
+            return 0
+        }
+        
+        return self.location!.distance(from: CLLocation(
+            latitude: address.latitude,
+            longitude: address.longitude
+        ))
     }
     
     /**
@@ -75,9 +91,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.location = locations.last!
-        self.parseLocation()
         
-        self.delegate?.locationWasChanged(location: locations.last!)
+        self.parseLocation() { address in
+            self.delegate?.locationWasChanged(address: address)
+        }
     }
     
     /**

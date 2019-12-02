@@ -19,16 +19,8 @@ struct UserLocation: View, LocationChangedDelegate {
         }
     }
     
-    func locationWasChanged(location: CLLocation) {
-        self.address.name = NSLocalizedString("Your current location", comment: "")
-        self.address.latitude = location.coordinate.latitude
-        self.address.longitude = location.coordinate.longitude
-        
-        self.manager.lookupLocation(location: location) { placemarker in
-            if placemarker != nil && placemarker?.name != nil {
-                self.address.name = placemarker!.name!
-            }
-        }
+    func locationWasChanged(address: Address) {
+        self.address.set(address: address)
     }
 }
 

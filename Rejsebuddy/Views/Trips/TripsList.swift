@@ -25,7 +25,7 @@ class TripsListViewModel: ObservableObject {
                 .fetch(origin: self.origin, destination: self.destination)
                 .sink(receiveCompletion: { c in
                     if case let .failure(error) = c {
-                        print(error)
+                        dump(error)
                     }
                 }, receiveValue: { list in
                     self.trips = list.trips

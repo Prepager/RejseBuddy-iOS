@@ -59,7 +59,7 @@ class Model: NSManagedObject {
         do {
             try self.getContext().save()
         } catch {
-            print(error)
+            dump(error)
             fatalError("Couldn't save model")
         }
     }
@@ -71,7 +71,7 @@ class Model: NSManagedObject {
         do {
             try self.getContext().execute(request)
         } catch {
-            print(error)
+            dump(error)
             fatalError("Couldn't save model")
         }
     }
@@ -83,7 +83,7 @@ class Model: NSManagedObject {
         do {
             return try self.getContext().fetch(request)
         } catch {
-            print(error)
+            dump(error)
             fatalError("Couldn't query model")
         }
     }
