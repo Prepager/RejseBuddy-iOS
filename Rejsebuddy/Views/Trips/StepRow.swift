@@ -19,6 +19,8 @@ struct StepRow: View {
                 }.frame(width: 70)
                 
                 Text(step.origin.name)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             
             HStack {
@@ -32,6 +34,7 @@ struct StepRow: View {
                                     .padding(.vertical, 4)
                                     .padding(.horizontal, 8)
                                     .foregroundColor(.white)
+                                    .fixedSize()
                             }
                             .background(Color.blue)
                             .cornerRadius(4)
@@ -39,6 +42,8 @@ struct StepRow: View {
                             Image(systemName: "arrow.right")
                             
                             Text(step.getLineDirection())
+                                .lineLimit(1)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                         
                         HStack {
@@ -78,6 +83,8 @@ struct StepRow: View {
                 }.frame(width: 70)
                 
                 Text(step.destination.name)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }.padding([.top, .bottom], 8)
     }
