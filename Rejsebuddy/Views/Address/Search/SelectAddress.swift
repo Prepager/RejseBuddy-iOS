@@ -55,6 +55,7 @@ class LocationSearchViewModel: ObservableObject {
 struct SelectAddress: View {
     @Binding var show: Bool
     @ObservedObject var address: Address
+    @ObservedObject var keyboard = Keyboard(hasTabbar: false)
     @ObservedObject var viewModel = LocationSearchViewModel()
     
     init(show: Binding<Bool>, address: Address) {
@@ -79,7 +80,7 @@ struct SelectAddress: View {
                 }) {
                     LocationRow(location: location)
                 }
-            }
+            }.padding(.bottom, self.keyboard.height)
         }
     }
 }

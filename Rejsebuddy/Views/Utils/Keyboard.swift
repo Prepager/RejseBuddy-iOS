@@ -8,12 +8,17 @@ class Keyboard: ObservableObject {
     let tabBarHeight: CGFloat = 49.0
     
     var duration: CGFloat = 0
+    var hasTabbar: Bool = true
+    
     @Published var height: CGFloat = 0
     
     /**
      Adds keyboard observers.
      */
-    init() {
+    init(hasTabbar: Bool = true) {
+        // Save settings.
+        self.hasTabbar = hasTabbar
+        
         // Get the current application window.
         self.view = UIApplication.shared.windows.first { $0.isKeyWindow }
         
@@ -55,7 +60,9 @@ class Keyboard: ObservableObject {
         // Save and animate height if found.
         if (keyboard?.height != nil) {
             withAnimation(.easeInOut(duration: Double(self.duration))) {
-                self.height = keyboard!.height - (safeArea?.bottom ?? 0) - self.tabBarHeight
+                self.height = keyboard!.height - (safeArea?.bottom ?? 0) - (
+                    self.hasTabbar ? self.tabBarHeight : 0
+                )
             }
         }
     }
