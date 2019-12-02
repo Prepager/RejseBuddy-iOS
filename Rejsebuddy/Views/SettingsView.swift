@@ -57,6 +57,8 @@ struct SettingsView: View {
      */
     func importExampleData() {
         ContactsSeeder.populate()
+        RecentsSeeder.populate()
+        
         self.imported.toggle()
     }
     
@@ -65,6 +67,8 @@ struct SettingsView: View {
      */
     func deleteAppData() {
         Contact.truncate()
+        Recent.truncate()
+        
         self.truncated.toggle()
     }
 }

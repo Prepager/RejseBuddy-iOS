@@ -45,13 +45,13 @@ struct TripsList: View {
         VStack(alignment: .leading, spacing: 0) {
             VStack {
                 HStack {
-                    Image(systemName: "stop.circle").foregroundColor(.gray)
+                    Image(systemName: "a.circle").foregroundColor(.gray)
                     Text(viewModel.origin.name)
                     Spacer()
                 }
                 
                 HStack {
-                    Image(systemName: "stop.circle").foregroundColor(.gray)
+                    Image(systemName: "b.circle").foregroundColor(.red)
                     Text(viewModel.destination.name)
                     Spacer()
                 }
@@ -80,7 +80,14 @@ struct TripsList: View {
             displayMode: .inline
         )
         .onAppear {
+            // Fetch the trip results.
             self.viewModel.fetch()
+            
+            // Add request to recents.
+            Recent.create(
+                origin: self.viewModel.origin,
+                destination: self.viewModel.destination
+            )
         }
     }
 }

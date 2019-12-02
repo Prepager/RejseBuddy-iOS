@@ -35,6 +35,10 @@
 		E18104A82391A25F00C37A7C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18104A72391A25F00C37A7C /* TimeIntervalExtension.swift */; };
 		E18104AC2391B92400C37A7C /* TripInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18104AB2391B92400C37A7C /* TripInfo.swift */; };
 		E18104AE2391DEB000C37A7C /* StepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18104AD2391DEB000C37A7C /* StepRow.swift */; };
+		E18118C32395A05600FD5329 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18118C22395A05600FD5329 /* Recent.swift */; };
+		E18118C62395A20200FD5329 /* RecentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18118C52395A20200FD5329 /* RecentsList.swift */; };
+		E18118C82395A29600FD5329 /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18118C72395A29600FD5329 /* RecentRow.swift */; };
+		E18118CA2395A52D00FD5329 /* RecentsSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18118C92395A52D00FD5329 /* RecentsSeeder.swift */; };
 		E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E2238C7D86003E3654 /* SelectAddress.swift */; };
 		E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E4238C8171003E3654 /* SearchBar.swift */; };
 		E1C272E8238C8A52003E3654 /* SearchLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C272E7238C8A52003E3654 /* SearchLocations.swift */; };
@@ -83,6 +87,11 @@
 		E18104A72391A25F00C37A7C /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		E18104AB2391B92400C37A7C /* TripInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfo.swift; sourceTree = "<group>"; };
 		E18104AD2391DEB000C37A7C /* StepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepRow.swift; sourceTree = "<group>"; };
+		E18118C123955C3E00FD5329 /* default.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = default.gpx; path = ../../Downloads/default.gpx; sourceTree = "<group>"; };
+		E18118C22395A05600FD5329 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		E18118C52395A20200FD5329 /* RecentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsList.swift; sourceTree = "<group>"; };
+		E18118C72395A29600FD5329 /* RecentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRow.swift; sourceTree = "<group>"; };
+		E18118C92395A52D00FD5329 /* RecentsSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSeeder.swift; sourceTree = "<group>"; };
 		E1C272E2238C7D86003E3654 /* SelectAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddress.swift; sourceTree = "<group>"; };
 		E1C272E4238C8171003E3654 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E1C272E7238C8A52003E3654 /* SearchLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocations.swift; sourceTree = "<group>"; };
@@ -123,6 +132,7 @@
 		E14D30692364816500FB79BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E18118C42395A1DF00FD5329 /* Recents */,
 				E1FCB215238DA63400AC6F88 /* Trips */,
 				E14D306A2364817B00FB79BF /* Utils */,
 				E14D306423647D4F00FB79BF /* Address */,
@@ -160,6 +170,7 @@
 			children = (
 				E172A78423670CBD005BD166 /* Seeders */,
 				E14D309B2365AF3200FB79BF /* Contact.swift */,
+				E18118C22395A05600FD5329 /* Recent.swift */,
 				E14D309D2365AFF800FB79BF /* Model.swift */,
 				E172A78C23688F2C005BD166 /* Address.swift */,
 			);
@@ -169,6 +180,7 @@
 		E150904823644840009178AA = {
 			isa = PBXGroup;
 			children = (
+				E18118C123955C3E00FD5329 /* default.gpx */,
 				E150905323644840009178AA /* Rejsebuddy */,
 				E150905223644840009178AA /* Products */,
 				E172A7892367297F005BD166 /* Frameworks */,
@@ -215,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				E172A78523670CCB005BD166 /* ContactsSeeder.swift */,
+				E18118C92395A52D00FD5329 /* RecentsSeeder.swift */,
 			);
 			path = Seeders;
 			sourceTree = "<group>";
@@ -225,6 +238,15 @@
 				E172A78A23672980005BD166 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18118C42395A1DF00FD5329 /* Recents */ = {
+			isa = PBXGroup;
+			children = (
+				E18118C52395A20200FD5329 /* RecentsList.swift */,
+				E18118C72395A29600FD5329 /* RecentRow.swift */,
+			);
+			path = Recents;
 			sourceTree = "<group>";
 		};
 		E1C272E6238C8A2F003E3654 /* API */ = {
@@ -363,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14D30A02365D35000FB79BF /* Input.swift in Sources */,
+				E18118C32395A05600FD5329 /* Recent.swift in Sources */,
 				E18104AC2391B92400C37A7C /* TripInfo.swift in Sources */,
 				E1C272EC238C8AB7003E3654 /* RPLocation.swift in Sources */,
 				E14D309E2365AFF800FB79BF /* Model.swift in Sources */,
@@ -370,9 +393,11 @@
 				E1FCB21D238DBCDD00AC6F88 /* RPStep.swift in Sources */,
 				E150905723644840009178AA /* SceneDelegate.swift in Sources */,
 				E1FCB217238DA64500AC6F88 /* TripsList.swift in Sources */,
+				E18118C82395A29600FD5329 /* RecentRow.swift in Sources */,
 				E1FCB21F238DC25000AC6F88 /* RPTrip.swift in Sources */,
 				E1FCB222238DC54B00AC6F88 /* DoubleExtension.swift in Sources */,
 				E150905923644840009178AA /* ContentView.swift in Sources */,
+				E18118C62395A20200FD5329 /* RecentsList.swift in Sources */,
 				E172A78D23688F2C005BD166 /* Address.swift in Sources */,
 				E18104A42391401800C37A7C /* RPNotes.swift in Sources */,
 				E172A783236641DB005BD166 /* Keyboard.swift in Sources */,
@@ -385,6 +410,7 @@
 				E172A78623670CCB005BD166 /* ContactsSeeder.swift in Sources */,
 				E1C272E3238C7D86003E3654 /* SelectAddress.swift in Sources */,
 				E14D306123646EF300FB79BF /* ContactsView.swift in Sources */,
+				E18118CA2395A52D00FD5329 /* RecentsSeeder.swift in Sources */,
 				E1C272E8238C8A52003E3654 /* SearchLocations.swift in Sources */,
 				E1C272E5238C8171003E3654 /* SearchBar.swift in Sources */,
 				E14D3068236480CC00FB79BF /* UserLocation.swift in Sources */,

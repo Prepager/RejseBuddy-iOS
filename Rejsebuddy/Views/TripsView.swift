@@ -56,7 +56,7 @@ struct TripsView: View {
                     radius: 4, y: 3
                 )
                 
-                Rectangle().fill(Color.white)
+                RecentsList()
             }
             .navigationBarTitle(
                 Text("Trips"),
