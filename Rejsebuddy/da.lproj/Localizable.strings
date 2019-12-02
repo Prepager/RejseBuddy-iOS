@@ -33,3 +33,6 @@
 "Data Deleted" = "Data Slettet";
 "Delete application data" = "Slet applikations data";
 "This action is irreversible once completed" = "Denne handling er irreversibel når den er afsluttet";
+
+"Import contacts" = "Importer kontakter";
+"Imports all your contacts with an address" = "Importer alle dine kontakter med en adresse";
