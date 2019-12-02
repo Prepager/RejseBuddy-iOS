@@ -6,11 +6,11 @@ public class FetchTrips {
     func fetch(origin: Address, destination: Address) -> AnyPublisher<RPTripList, Error> {
         // Build endpoint from origin and destination address.
         var endpoint = "/trip"
-        endpoint += "?originCoordX=" + (origin.latitude * 1000000).clean
-        endpoint += "&originCoordY=" + (origin.longitude * 1000000).clean
+        endpoint += "?originCoordY=" + (origin.latitude * 1000000).clean
+        endpoint += "&originCoordX=" + (origin.longitude * 1000000).clean
         endpoint += "&originCoordName=" + origin.name
-        endpoint += "&destCoordX=" + (destination.latitude * 1000000).clean
-        endpoint += "&destCoordY=" + (destination.longitude * 1000000).clean
+        endpoint += "&destCoordY=" + (destination.latitude * 1000000).clean
+        endpoint += "&destCoordX=" + (destination.longitude * 1000000).clean
         endpoint += "&destCoordName=" + destination.name
 
         // Generate URL for trips endpoint.

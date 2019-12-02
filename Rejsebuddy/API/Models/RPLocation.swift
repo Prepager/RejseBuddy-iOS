@@ -24,8 +24,8 @@ struct RPLocation: Decodable, Hashable {
     func getAddress() -> Address {
         return Address(
             name: self.name,
-            latitude: Double(self.x)! / 1000000,
-            longitude: Double(self.y)! / 1000000
+            latitude: Double(self.y)! / 1000000,
+            longitude: Double(self.x)! / 1000000
         )
     }
     
