@@ -3,6 +3,7 @@ import Combine
 
 struct TripInfo: View {
     var trip: RPTrip
+    var manager = NotificationManager()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -24,6 +25,38 @@ struct TripInfo: View {
             Text("Trip"),
             displayMode: .inline
         )
+        .onAppear {
+            // Request notification authorization.
+            self.manager.request {
+                // Loop through the trip steps.
+                self.trip.steps.forEach { step in
+                    
+                    print(Calendar.current.date(
+                        byAdding: .second,
+                        value: (10 * ((self.trip.steps.firstIndex(of: step) ?? 0) + 1)),
+                        to: Date()
+                    )!)
+                    
+                    // Schedule change notification.
+                    self.manager.schedule(
+                        id: UUID().uuidString,
+                        title: NSLocalizedString("Change Line", comment: "") + ": " + step.name,
+                        text: step.origin.name,
+                        date: step.origin.getDate().addingTimeInterval(-60.0)
+                        
+                        /* DEMO: date: Calendar.current.date(
+                            byAdding: .second,
+                            value: (5 * ((self.trip.steps.firstIndex(of: step) ?? 0) + 1)),
+                            to: Date()
+                        )!*/
+                    )
+                }
+            }
+        }
+        .onDisappear {
+            // Unschedule all pending notifications.
+            self.manager.removeAll()
+        }
     }
 }
 
